@@ -1,0 +1,72 @@
+﻿<Window x:Class="AbiturientClient.MVVM.View.Navigator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:AbiturientClient.MVVM.ViewModel"
+        xmlns:local="clr-namespace:AbiturientClient"
+        xmlns:gif ="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Меню навигации" Height="400" Width="480" WindowStartupLocation="CenterScreen" Background="White">
+    <Window.DataContext>
+        <viewModel:Navigator/>
+    </Window.DataContext>
+    <Grid>
+        <Button Width="80" Height="30" Command="{Binding ToAuthorisationWindow}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30, 20" Style="{StaticResource ButtonMouseOverNonBackGround}" Background="White" BorderThickness="0">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Resources/icons8-back-arrow-96.png" Width="30" Height="30" Style="{StaticResource RoundImageOpasity}"/>
+                <Label Content="Выход" Style="{StaticResource LabelMouseOverColorRed}" Width="45" Margin="0,1,0,0" Foreground="Blue" IsEnabled="False"/>
+            </StackPanel>            
+        </Button>
+        <Grid Name="GridNavigator" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid Height="300" Width="450">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Width="180" Height="100" Background="#FF52A4E8" Style="{StaticResource ButtonTargetNonOnlyBackground}">
+                    <StackPanel Orientation="Horizontal" Width="180" Height="100">
+                        <Image Source="/Resources/icons8-spreadsheet-80.png" Height="70" Width="70"/>
+                        <StackPanel>
+                            <Label IsEnabled="False" Height="50" Width="120" Content="Смотреть" FontSize="20" Foreground="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Padding="0"/>
+                            <Label IsEnabled="False" Height="50" Width="120" Content="таблицу" FontSize="20" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Padding="0"/>
+                        </StackPanel>                        
+                    </StackPanel>
+                </Button>
+                <Button Width="180" Height="100" Background="#FF52A4E8" Grid.Column="2" Style="{StaticResource ButtonTargetNonOnlyBackground}">
+                    <StackPanel Orientation="Horizontal" Width="180" Height="100">
+                        <Image Source="/Resources/icons8-enrollment-64.png" Height="60" Width="60"/>
+                        <StackPanel>
+                            <Label IsEnabled="False" Height="100" Width="120" Content="Зачисление" FontSize="20" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+                <Button Width="180" Height="100" Grid.Row="2" Background="#FF52A4E8" Style="{StaticResource ButtonTargetNonOnlyBackground}">
+                    <StackPanel Orientation="Horizontal" Width="180" Height="100">
+                        <Image Source="/Resources/icons8-collaborator-male-50.png" Height="60" Width="60"/>
+                        <StackPanel>
+                            <Label IsEnabled="False" Height="33" Width="120" Content="Запрос на" FontSize="20" Foreground="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Padding="0"/>
+                            <Label IsEnabled="False" Height="33" Width="120" Content="зачисление" FontSize="20" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0"/>
+                            <Label IsEnabled="False" Height="33" Width="120" Content="роли" FontSize="20" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Padding="0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding ToCreateCampaign}" Width="180" Height="100" Background="#FF52A4E8" Grid.Column="2" Grid.Row="2" Style="{StaticResource ButtonTargetNonOnlyBackground}">
+                    <StackPanel Orientation="Horizontal" Width="180" Height="100">
+                        <Image Source="/Resources/icons8-create-50.png" Height="60" Width="60"/>
+                        <StackPanel>
+                            <Label IsEnabled="False" Height="50" Width="120" Content="Сформировать" FontSize="16" Foreground="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Padding="0"/>
+                            <Label IsEnabled="False" Height="50" Width="120" Content="кампанию" FontSize="16" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Padding="0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+            </Grid>
+            <Image x:Name="animation" gif:AnimationBehavior.SourceUri="/Resources/loading.gif" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Visibility="Hidden"/>
+        </Grid>
+    </Grid>    
+</Window>

@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="loading.gif" />
+    <None Remove="Resources\2.png" />
+    <None Remove="Resources\button.png" />
+    <None Remove="Resources\deleteButton.jpg" />
+    <None Remove="Resources\deleteButton.png" />
+    <None Remove="Resources\icons8-arrow-80.png" />
+    <None Remove="Resources\icons8-back-arrow-96.png" />
+    <None Remove="Resources\icons8-collaborator-male-50.png" />
+    <None Remove="Resources\icons8-create-50.png" />
+    <None Remove="Resources\icons8-enrollment-64.png" />
+    <None Remove="Resources\icons8-navigation-64.png" />
+    <None Remove="Resources\icons8-spreadsheet-80.png" />
+    <None Remove="Resources\icons8-table-40.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="106.12.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\2.png" />
+    <Resource Include="Resources\button.png" />
+    <Resource Include="Resources\deleteButton.png" />
+    <Resource Include="Resources\icons8-arrow-80.png" />
+    <Resource Include="Resources\icons8-back-arrow-96.png" />
+    <Resource Include="Resources\icons8-collaborator-male-50.png" />
+    <Resource Include="Resources\icons8-create-50.png" />
+    <Resource Include="Resources\icons8-enrollment-64.png" />
+    <Resource Include="Resources\icons8-navigation-64.png" />
+    <Resource Include="Resources\icons8-spreadsheet-80.png" />
+    <Resource Include="Resources\loading.gif" />
+  </ItemGroup>
+
+</Project>
